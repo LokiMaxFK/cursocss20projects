@@ -1,0 +1,53 @@
+*,
+::after,
+::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.switch {
+
+    --translate: translate(0%);
+    --color-input: #bbc1e1;
+    cursor: pointer;
+    margin: 30px auto;
+    display: block;
+    width: 100px;
+    border-radius: 100000px;
+    border: 2px solid #cdd2ea;
+    box-shadow: 0 0 10px -4px #275efe;
+
+
+}
+
+.switch:has(:checked) {
+    background-color: #275efe;
+    --translate: translate(150%);
+    --color-input: white;
+}
+
+.switch__container {
+    width: 100%;
+    display: block;
+    padding: 7%;
+
+
+}
+
+.switch__input {
+    cursor: pointer;
+    background-color: var(--color-input);
+    border-radius: 50%;
+    appearance: none;
+    aspect-ratio: 1/1;
+    width: 40%;
+    display: block;
+
+    transition: transform .4s;
+    transition-timing-function: cubic-bezier(.66, .13, .44, 1.25);
+    transform: var(--translate);
+}

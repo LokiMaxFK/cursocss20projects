@@ -1,0 +1,110 @@
+*, ::after, ::before{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.menu{
+    width: max-content;
+    margin: 140px  auto;
+    scale: 2;
+
+    display: grid;
+    align-content: center;
+    gap: 6px;
+
+
+    height: 30px;
+    cursor: pointer;
+}
+
+.menu:hover{
+    --scale-line2: 0;
+    --transform-line1: rotate(45deg);
+    --transform-line3: translate(0,1px) rotate(-45deg);
+}
+
+.line{
+    background-color: #000;
+    width: 30px;
+    height: 4px;
+    transform-origin: left;
+    border-radius: 10px;
+    transition: transform .2s;
+}
+
+.line-1{
+    transform: var(--transform-line1);
+}   
+
+.line-2{
+    transform: scaleX(var(--scale-line2, 1));
+}
+
+.line-3{
+    transform: var(--transform-line3);
+}
+
+
+.menu-animation{
+    width: max-content;
+    margin: 140px  auto;
+    scale: 2;
+
+    display: grid;
+    align-content: center;
+    grid-area: "lineas";
+
+    height: 30px;
+    cursor: pointer;
+
+    --translate-linea1: 0 -8px;
+    --translate-linea3: 0 8px;
+
+    --rotate-linea1: 0deg;
+    --rotate-linea3: 0deg;
+
+    --opacity-linea2: 1;
+
+    --transition-lines: translate .2s .2s, rotate .2s , opacity .2s .2s; 
+}
+
+.menu-animation:hover{
+    --translate-linea1: 0 0;
+    --translate-linea3: 0 0;
+
+    --rotate-linea1: 45deg;
+    --rotate-linea3: -45deg;
+
+    --opacity-linea2: 0;
+
+    --transition-lines: translate .2s, rotate .2s .2s, opacity .2s; 
+}
+
+.linea{
+    grid-area: lineas;
+
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 10px;
+
+    transition: var(--transition-lines);
+}
+
+.linea-1{
+    translate: var(--translate-linea1);
+    rotate: var(--rotate-linea1);
+}
+
+.linea-2{
+    opacity: var(--opacity-linea2);
+}
+
+.linea-3{
+    translate: var(--translate-linea3);
+    rotate: var(--rotate-linea3);
+}
